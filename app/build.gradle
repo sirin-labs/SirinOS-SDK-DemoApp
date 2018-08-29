@@ -28,6 +28,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compile project(path: ':walletconnectionsdk')
+    implementation 'com.github.jd-alexander:android-flat-button:v1.1'
+    apply plugin: 'kotlin-android-extensions'
 }
 repositories {
     mavenCentral()

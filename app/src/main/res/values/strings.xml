@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ExampleThirdParty</string>
+    <string name="get_address_text">Get Address</string>
+    <string name="get_chain_id">Get Chain Id</string>
+    <string name="get_rpc_address">Get Rpc Address</string>
+    <string name="send_transaction">Send Transaction</string>
+    <string name="sign_transaction">Sign Transaction</string>
 </resources>

@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <info.hoang8f.widget.FButton
+        android:id="@+id/get_address_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/main_buttons_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        fbutton:fButtonColor="@color/fbutton_color_belize_hole"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/buttonShadow"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp"
+        android:textColor="@color/buttons_text_color"
+        android:text="@string/get_address_text"/>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/get_chain_id_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_buttons_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/get_address_btn"
+        fbutton:fButtonColor="@color/fbutton_color_green_sea"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/buttonShadow"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp"
+        android:textColor="@color/buttons_text_color"
+        android:text="@string/get_chain_id"/>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/get_rpc_address_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_buttons_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/get_chain_id_btn"
+        fbutton:fButtonColor="@color/fbutton_color_wisteria"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/buttonShadow"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp"
+        android:textColor="@color/buttons_text_color"
+        android:text="@string/get_rpc_address"/>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/send_transaction_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_buttons_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/get_rpc_address_btn"
+        fbutton:fButtonColor="@color/fbutton_color_carrot"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/buttonShadow"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp"
+        android:textColor="@color/buttons_text_color"
+        android:text="@string/send_transaction"/>
+    <info.hoang8f.widget.FButton
+        android:id="@+id/sign_transaction_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_buttons_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/send_transaction_btn"
+        fbutton:fButtonColor="@color/fbutton_color_pomegranate"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/buttonShadow"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp"
+        android:textColor="@color/buttons_text_color"
+        android:text="@string/sign_transaction"/>
 
 </android.support.constraint.ConstraintLayout>
