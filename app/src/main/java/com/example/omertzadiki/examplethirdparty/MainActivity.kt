@@ -8,6 +8,7 @@ import android.widget.Toast
 
 import com.example.omertzadiki.examplethirdparty.Constants.*
 import com.sirinlabs.walletconnectionsdk.WalletCommunicationManager
+import com.sirinlabs.walletconnectionsdk.entities.SendRequestEntity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -48,36 +49,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendTransaction() {
-        WalletCommunicationManager.sendTransaction(successMethod = {
-            Log.d("omer","got back to app with success flag")
-        }, failureMethod = {
-            Log.d("omer","got back to app with failure flag")
+        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001)
+        WalletCommunicationManager.sendTransaction(data, successMethod = { hash ->
+            toastValue("Transaction Succeed : $hash")
+        }, failureMethod = {err ->
+            toastValue("Transaction Failed : $err")
         })
     }
 
     fun signTransaction() {
-        WalletCommunicationManager.sendTransaction(successMethod = {
-            Log.d("omer","got back to app with success flag")
-        }, failureMethod = {
-            Log.d("omer","got back to app with failure flag")
+        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001)
+        WalletCommunicationManager.sendTransaction(data, successMethod = {hash ->
+            toastValue("Transaction Succeed : $hash")
+        }, failureMethod = {err ->
+            toastValue("Transaction Failed : $err")
         })
     }
 
 
-    fun getAddress() {
+    private fun getAddress() {
         toastValue(WalletCommunicationManager.getPublicAddress(COIN_TYPE))
     }
 
-    fun getChainId() {
+    private fun getChainId() {
         toastValue(WalletCommunicationManager.getChainId(COIN_TYPE).toString())
     }
 
-    fun getRpcAddress() {
+    private fun getRpcAddress() {
         toastValue(WalletCommunicationManager.getRpcAddress(COIN_TYPE))
     }
 
-    fun toastValue(value : String) {
-        Toast.makeText(applicationContext, value, Toast.LENGTH_LONG).show()
+    private fun toastValue(value : String) {
+        runOnUiThread {
+            Toast.makeText(this, value, Toast.LENGTH_LONG).show()
+        }
     }
 
     // Catch result from send intent
