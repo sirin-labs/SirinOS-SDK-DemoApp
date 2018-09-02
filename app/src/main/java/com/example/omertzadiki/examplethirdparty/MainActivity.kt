@@ -85,17 +85,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Catch result from send intent
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.d("omer", "result code : $resultCode")
-
-        when (resultCode) {
-            STATUS_BACK_FROM_SEND -> {
-            }
-        }
-
-        super.onActivityResult(requestCode, resultCode, data)
-    }
-
-
 }
