@@ -1,3 +1,9 @@
+/*
+ *
+ *  * code:<br />Copyright (C) 2018 SIRIN LABS AG
+ *
+ */
+
 package com.example.omertzadiki.examplethirdparty
 
 import android.support.v7.app.AppCompatActivity
