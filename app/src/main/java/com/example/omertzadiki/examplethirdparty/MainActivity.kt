@@ -1,12 +1,9 @@
 package com.example.omertzadiki.examplethirdparty
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 
-import com.example.omertzadiki.examplethirdparty.Constants.*
 import com.sirinlabs.walletconnectionsdk.WalletCommunicationManager
 import com.sirinlabs.walletconnectionsdk.entities.SendRequestEntity
 import kotlinx.android.synthetic.main.activity_main.*
