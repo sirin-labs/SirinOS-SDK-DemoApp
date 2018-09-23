@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendTransaction() {
-        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001)
+        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001, contractData = "5465d4s65465e4564e65e465d4")
         WalletCommunicationManager.sendTransaction(data, successMethod = { hash ->
             toastValue("Transaction Succeed : $hash")
         }, failureMethod = {err ->
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signTransaction() {
-        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001)
+        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001, contractData = "5465d4s65465e4564e65e465d4")
         WalletCommunicationManager.signTransaction(data, successMethod = {hash ->
             toastValue("Transaction Succeed : $hash")
         }, failureMethod = {err ->
