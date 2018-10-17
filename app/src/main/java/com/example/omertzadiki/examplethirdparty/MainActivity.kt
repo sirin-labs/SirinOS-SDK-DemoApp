@@ -49,10 +49,18 @@ class MainActivity : AppCompatActivity() {
         get_chain_id_btn.setOnClickListener {
             getChainId()
         }
+
+        get_walletid_btn.setOnClickListener {
+            getWalletId()
+        }
+
+        get_publickey_btn.setOnClickListener {
+            getPublicKey()
+        }
     }
 
     fun sendTransaction() {
-        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001, contractData = "5465d4s65465e4564e65e465d4")
+        val data = SendRequestEntity(recipient = "tokenUpdateManager", amount = 5000000000000000.0, contractData = "5465d4s65465e4564e65e465d4",gasPrice = 60000000.0,gasLimit = 6000000000.0)
         WalletCommunicationManager.sendTransaction(data, successMethod = { hash ->
             toastValue("Transaction Succeed : $hash")
         }, failureMethod = {err ->
@@ -61,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signTransaction() {
-        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 0.001, contractData = "5465d4s65465e4564e65e465d4")
+        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 5000.0, contractData = "5465d4s65465e4564e65e465d4")
         WalletCommunicationManager.signTransaction(data, successMethod = {hash ->
             toastValue("Transaction Succeed : $hash")
         }, failureMethod = {err ->
@@ -80,6 +88,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRpcAddress() {
         toastValue(WalletCommunicationManager.getRpcAddress(COIN_TYPE))
+    }
+
+    private fun getWalletId() {
+        toastValue(WalletCommunicationManager.getWalletId())
+    }
+
+    private fun getPublicKey() {
+        toastValue(WalletCommunicationManager.getPublicKey())
     }
 
     private fun toastValue(value : String) {

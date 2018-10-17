@@ -5,4 +5,6 @@
     <string name="get_rpc_address">Get Rpc Address</string>
     <string name="send_transaction">Send Transaction</string>
     <string name="sign_transaction">Sign Transaction</string>
+    <string name="get_publickey_text">get publickey</string>
+    <string name="get_walletid_text">Get walletid</string>
 </resources>

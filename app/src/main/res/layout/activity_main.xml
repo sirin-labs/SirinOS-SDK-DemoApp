@@ -20,10 +20,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <info.hoang8f.widget.FButton
-            android:id="@+id/get_address_btn"
+            android:id="@+id/get_walletid_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/get_address_text"
+            android:text="@string/get_walletid_text"
             android:textColor="@color/buttons_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +35,40 @@
             fbutton:shadowColor="@color/buttonShadow"
             fbutton:shadowEnabled="true"
             fbutton:shadowHeight="5dp" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_publickey_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_publickey_text"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_walletid_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_alizarin"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp"  />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_address_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_address_text"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_publickey_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_emerald"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp"  />
 
         <info.hoang8f.widget.FButton
             android:id="@+id/get_chain_id_btn"
