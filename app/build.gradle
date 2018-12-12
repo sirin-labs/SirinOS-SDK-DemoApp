@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 ext {
-    wallet_sdk_version = "0.0.5"
+    wallet_sdk_version = "0.1.1"
 }
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.omertzadiki.examplethirdparty"
+        applicationId "com.sirinlabs.sdkexample"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

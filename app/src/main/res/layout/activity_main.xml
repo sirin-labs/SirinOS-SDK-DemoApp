@@ -106,6 +106,74 @@
             fbutton:shadowEnabled="true"
             fbutton:shadowHeight="5dp" />
 
+        <EditText
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_rpc_address_btn"
+            android:id="@+id/signed_message_txt"
+            android:text="@string/app_name"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_signed_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/get_signed_message"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signed_message_txt"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_wisteria"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp">
+        </info.hoang8f.widget.FButton>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/start_pairing_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/pairing_message"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_signed_message"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_default_shadow_color"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp">
+        </info.hoang8f.widget.FButton>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/airdrop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/airdrop"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/start_pairing_button"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_midnight_blue"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp">
+        </info.hoang8f.widget.FButton>
+
         <info.hoang8f.widget.FButton
             android:id="@+id/send_transaction_btn"
             android:layout_width="wrap_content"
@@ -115,7 +183,7 @@
             android:textColor="@color/buttons_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/get_rpc_address_btn"
+            app:layout_constraintTop_toBottomOf="@id/airdrop_button"
             android:paddingRight="@dimen/button_sides_padding"
             android:paddingLeft="@dimen/button_sides_padding"
             fbutton:cornerRadius="5dp"

@@ -4,15 +4,18 @@
  *
  */
 
-package com.example.omertzadiki.examplethirdparty
+package com.sirin.sdkexample
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.sirinlabs.sdkexample.R
 
 import com.sirinlabs.walletconnectionsdk.WalletCommunicationManager
 import com.sirinlabs.walletconnectionsdk.entities.SendRequestEntity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.experimental.and
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initButtons() {
+
         send_transaction_btn.setOnClickListener {
             sendTransaction()
         }
@@ -57,6 +61,18 @@ class MainActivity : AppCompatActivity() {
         get_publickey_btn.setOnClickListener {
             getPublicKey()
         }
+
+        get_signed_message.setOnClickListener {
+            getSignedText()
+        }
+
+        start_pairing_button.setOnClickListener {
+            startPairing()
+        }
+
+        airdrop_button.setOnClickListener {
+            airDrop()
+        }
     }
 
     fun sendTransaction() {
@@ -77,9 +93,43 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    fun startPairing() {
+        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ", successMethod = {signature ->
+            toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
+        }, failureMethod = {err ->
+            toastValue("Transaction Failed : $err")
+        })
+    }
+
+    fun airDrop() {
+        WalletCommunicationManager.airDrop("AirDrops are free tokens for you! Once you claim the tokens , you can use them in the dCENTER for any purpose", successMethod = {signature ->
+            toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
+            Log.d("omer", "airdrop_der = ${byteArrayToHexString(signature)}")
+        }, failureMethod = {err ->
+            toastValue("Transaction Failed : $err")
+        })
+    }
+
 
     private fun getAddress() {
+        Log.d("omer", "address = ${WalletCommunicationManager.getPublicAddress(COIN_TYPE)}")
         toastValue(WalletCommunicationManager.getPublicAddress(COIN_TYPE))
+    }
+
+    fun byteArrayToHexString(bytes : ByteArray) : String{
+        var hexString = ""
+        bytes.map {
+            hexString += String.format("%02x", it and 0xff.toByte())
+        }
+        return hexString
+    }
+
+    private fun getSignedText() {
+        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ", successMethod = {signature ->
+            toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
+        }, failureMethod = {err ->
+            toastValue("Transaction Failed : $err")
+        })
     }
 
     private fun getChainId() {
@@ -96,6 +146,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun getPublicKey() {
         toastValue(WalletCommunicationManager.getPublicKey())
+        Log.d("omer", "publickey ${WalletCommunicationManager.getPublicKey()}")
+
     }
 
     private fun toastValue(value : String) {

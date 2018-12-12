@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">SirinWalletConnectionEx</string>
+    <string name="app_name">WalletSDKEX</string>
     <string name="get_address_text">Get Address</string>
     <string name="get_chain_id">Get Chain Id</string>
     <string name="get_rpc_address">Get Rpc Address</string>
+    <string name="get_signed_message">Get Signed Message</string>
     <string name="send_transaction">Send Transaction</string>
     <string name="sign_transaction">Sign Transaction</string>
     <string name="get_publickey_text">get publickey</string>
     <string name="get_walletid_text">Get walletid</string>
+    <string name="pairing_message">Sign Message</string>
+    <string name="airdrop">airdrop</string>
 </resources>
