@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sirin.sdkexample.MainActivity">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_walletid_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_walletid_text"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            fbutton:cornerRadius="5dp"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:fButtonColor="@color/fbutton_color_belize_hole"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_publickey_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_publickey_text"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_walletid_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_alizarin"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp"  />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_address_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_address_text"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_publickey_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_emerald"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp"  />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_chain_id_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/get_chain_id"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_address_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_green_sea"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_rpc_address_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/get_rpc_address"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_chain_id_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_wisteria"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+
+        <EditText
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_rpc_address_btn"
+            android:id="@+id/signed_message_txt"
+            android:text="@string/app_name"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <info.hoang8f.widget.FButton
+            android:id="@+id/get_signed_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/get_signed_message"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signed_message_txt"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_wisteria"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp">
+        </info.hoang8f.widget.FButton>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/start_pairing_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/pairing_message"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_signed_message"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_default_shadow_color"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp">
+        </info.hoang8f.widget.FButton>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/airdrop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/airdrop"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/start_pairing_button"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_midnight_blue"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp">
+        </info.hoang8f.widget.FButton>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/send_transaction_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/send_transaction"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/airdrop_button"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_carrot"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/sign_transaction_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_buttons_margin_top"
+            android:text="@string/sign_transaction"
+            android:textColor="@color/buttons_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/send_transaction_btn"
+            android:paddingRight="@dimen/button_sides_padding"
+            android:paddingLeft="@dimen/button_sides_padding"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_pomegranate"
+            fbutton:shadowColor="@color/buttonShadow"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

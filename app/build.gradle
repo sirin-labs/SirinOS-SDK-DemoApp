@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+ext {
+    wallet_sdk_version = "0.1.3"
+}
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.sirinlabs.sdkexample"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation "org.bitbucket.SirinOS:Wallet-SDK:$wallet_sdk_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.jd-alexander:android-flat-button:v1.1'
+    apply plugin: 'kotlin-android-extensions'
+}
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+        credentials { username authToken }
+    }
+}
