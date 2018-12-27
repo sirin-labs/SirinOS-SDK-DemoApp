@@ -81,7 +81,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startPairing() {
-        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ", successMethod = {signature ->
+        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),
+                "lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ",
+                successMethod = {signature ->
             toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
         }, failureMethod = {err ->
             toastValue("Transaction Failed : $err")
@@ -89,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun airDrop() {
-        WalletCommunicationManager.airDrop("AirDrops are free tokens for you! Once you claim the tokens , you can use them in the dCENTER for any purpose", successMethod = {signature ->
+        WalletCommunicationManager.airDrop("lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson", successMethod = {signature ->
             toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
             Log.d("omer", "airdrop_der = ${byteArrayToHexString(signature)}")
         }, failureMethod = {err ->
@@ -112,7 +114,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getSignedText() {
-        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ",false, successMethod = {signature ->
+        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),
+                "lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ",
+                true, successMethod = {signature ->
             toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
         }, failureMethod = {err ->
             toastValue("Transaction Failed : $err")
