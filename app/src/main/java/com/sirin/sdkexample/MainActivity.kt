@@ -38,10 +38,6 @@ class MainActivity : AppCompatActivity() {
             sendTransaction()
         }
 
-        sign_transaction_btn.setOnClickListener {
-            signTransaction()
-        }
-
         get_address_btn.setOnClickListener {
             getAddress()
         }
@@ -84,15 +80,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun signTransaction() {
-        val data = SendRequestEntity(recipient = "0x008023500DfB949b8854C329C6237bFC3c060Fd6", amount = 5000.0, contractData = "5465d4s65465e4564e65e465d4")
-        WalletCommunicationManager.signTransaction(data, successMethod = {hash ->
-            toastValue("Transaction Succeed : $hash")
-        }, failureMethod = {err ->
-            toastValue("Transaction Failed : $err")
-        })
-    }
-
     fun startPairing() {
         WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ", successMethod = {signature ->
             toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
@@ -125,7 +112,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getSignedText() {
-        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ", successMethod = {signature ->
+        WalletCommunicationManager.startSigningMessage(signed_message_txt.text.toString(),"lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson lorem ipson ",false, successMethod = {signature ->
             toastValue("Transaction Succeed : ${byteArrayToHexString(signature)}")
         }, failureMethod = {err ->
             toastValue("Transaction Failed : $err")
